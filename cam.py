@@ -39,11 +39,21 @@ def main():
 	while rval:
 		rval, frame = vc.read()
 		print(toASCII(frame))
-		
 
 	sys.exit()
 
 def toASCII(frame, cols = 120, rows = 35):
+	"""
+	Converts a given frame to ASCII art representation.
+
+	Parameters:
+	- frame: The input frame to convert to ASCII art. (Type: any)
+	- cols: The number of columns in the ASCII art representation. (Type: int, Default: 120)
+	- rows: The number of rows in the ASCII art representation. (Type: int, Default: 35)
+
+	Returns:
+	- result: The ASCII art representation of the input frame. (Type: str)
+	"""
 
 	frame = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
 	height, width = frame.shape
@@ -62,7 +72,7 @@ def toASCII(frame, cols = 120, rows = 35):
 	return result
 
 def grayToChar(gray):
-  CHAR_LIST = ' .:-=+*#%@' # Replace by " .',;:clodxkO0KXNWM" if you want more precision.
+  CHAR_LIST = " .',;:clodxkO0KXNWM" # ' .:-=+*#%@' # Replace by " .',;:clodxkO0KXNWM" if you want more precision.
   num_chars = len(CHAR_LIST)
   return CHAR_LIST[
 		min(
