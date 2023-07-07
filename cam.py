@@ -63,8 +63,8 @@ def toASCII(frame, cols = 120, rows = 35):
 
 def grayToChar(gray):
   CHAR_LIST = ' .:-=+*#%@' # Replace by " .',;:clodxkO0KXNWM" if you want more precision.
-	num_chars = len(CHAR_LIST)
-	return CHAR_LIST[
+  num_chars = len(CHAR_LIST)
+  return CHAR_LIST[
 		min(
 			int(gray * num_chars / 255),
 			num_chars - 1
